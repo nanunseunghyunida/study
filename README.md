@@ -1,2 +1,2 @@
 # Study
-Android application developer 개인 공부장
+정승현 개인 공부장
