@@ -8,19 +8,21 @@ class CurrencyCard extends StatelessWidget {
   final Color _blackColor = const Color(0xff1f2123);
   final double _offsetSize = -20;
 
-  const CurrencyCard({
+  late bool isInverted;
+
+  CurrencyCard({
     super.key,
     required this.name,
     required this.code,
     required this.amount,
     required this.icon,
     required this.order,
-  });
+  }) {
+    isInverted = order.isEven;
+  }
 
   @override
   Widget build(BuildContext context) {
-    var isInverted = order.isEven;
-
     return Transform.translate(
       offset: Offset(0, _offsetSize * order.toDouble()),
       child: Container(

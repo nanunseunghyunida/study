@@ -117,28 +117,28 @@ class App extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const CurrencyCard(
+                CurrencyCard(
                   name: 'Euro',
                   code: 'EUR',
                   amount: '6,428',
                   icon: Icons.euro_symbol,
                   order: 0,
                 ),
-                const CurrencyCard(
+                CurrencyCard(
                   name: 'Bitcoin',
                   code: 'BTC',
                   amount: '9,728',
                   icon: Icons.currency_bitcoin,
                   order: 1,
                 ),
-                const CurrencyCard(
+                CurrencyCard(
                   name: 'Dollar',
                   code: 'USD',
                   amount: '3,274',
                   icon: Icons.attach_money_outlined,
                   order: 2,
                 ),
-                const CurrencyCard(
+                CurrencyCard(
                   name: 'Rupee',
                   code: 'INR',
                   amount: '28,982',
