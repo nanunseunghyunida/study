@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:toonflix/model/webtoon_model.dart';
 import 'package:toonflix/screens/detail_screnn.dart';
 
-class Webtoon extends StatelessWidget {
+class WebtoonWidget extends StatelessWidget {
   final WebtoonModel webtoon;
 
-  const Webtoon({
+  const WebtoonWidget({
     super.key,
     required this.webtoon,
   });
@@ -28,7 +28,7 @@ class Webtoon extends StatelessWidget {
           Hero(
             tag: webtoon.id,
             child: Container(
-              width: 250,
+              width: 200,
               clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
