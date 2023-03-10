@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toonflix/model/webtoon_model.dart';
-import 'package:toonflix/screens/detail_screnn.dart';
+import 'package:toonflix/screens/detail_screen.dart';
 
 class WebtoonWidget extends StatelessWidget {
   final WebtoonModel webtoon;
@@ -40,7 +40,13 @@ class WebtoonWidget extends StatelessWidget {
                   )
                 ],
               ),
-              child: Image.network(webtoon.thumb),
+              child: Image.network(
+                webtoon.thumb,
+                headers: const {
+                  "User-Agent":
+                      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36",
+                },
+              ),
             ),
           ),
           const SizedBox(
