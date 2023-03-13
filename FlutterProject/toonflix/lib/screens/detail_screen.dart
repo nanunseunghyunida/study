@@ -76,15 +76,21 @@ class _DetailScreenState extends State<DetailScreen> {
           IconButton(
             onPressed: onHeartTap,
             icon: isLikes
-                ? const Icon(Icons.favorite)
-                : const Icon(Icons.favorite_outline),
+                ? const Icon(
+                    Icons.favorite,
+                    size: 30,
+                  )
+                : const Icon(
+                    Icons.favorite_outline,
+                    size: 30,
+                  ),
           )
         ],
         title: Text(
           widget.webtoon.title,
           style: const TextStyle(
             fontSize: 24,
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.w600,
           ),
         ),
       ),
@@ -111,7 +117,13 @@ class _DetailScreenState extends State<DetailScreen> {
                           )
                         ],
                       ),
-                      child: Image.network(widget.webtoon.thumb),
+                      child: Image.network(
+                        widget.webtoon.thumb,
+                        headers: const {
+                          "User-Agent":
+                              "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36",
+                        },
+                      ),
                     ),
                   ),
                 ],

@@ -23,27 +23,22 @@ class EpisodeWidget extends StatelessWidget {
     return GestureDetector(
       onTap: onButtonTap,
       child: Container(
-        margin: const EdgeInsets.only(bottom: 1),
         decoration: BoxDecoration(
-          color: Colors.green.shade400,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.only(
-            right: 10,
-            left: 5,
-            top: 5,
-            bottom: 5,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Container(
-                    width: 100,
+            color: Colors.green.shade400,
+            borderRadius: BorderRadius.circular(10)),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(5),
+                  child: Container(
+                    width: 120,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                     ),
+                    clipBehavior: Clip.hardEdge,
                     child: Image.network(
                       episode.thumb,
                       headers: const {
@@ -52,24 +47,29 @@ class EpisodeWidget extends StatelessWidget {
                       },
                     ),
                   ),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  Text(
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                SizedBox(
+                  width: 230,
+                  child: Text(
                     episode.title,
+                    overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600),
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                ],
-              ),
-              const Icon(
-                Icons.chevron_right_outlined,
-                color: Colors.white,
-              ),
-            ],
-          ),
+                ),
+              ],
+            ),
+            const Icon(
+              Icons.chevron_right_outlined,
+              color: Colors.white,
+            ),
+          ],
         ),
       ),
     );

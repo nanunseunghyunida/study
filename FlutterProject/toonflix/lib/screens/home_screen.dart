@@ -12,41 +12,48 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 2,
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.greenAccent,
-        title: const Text(
-          '오늘의 웹툰',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-      ),
       // FutureBuilder 사용시 StatelessWidget에서도 Future의 데이터 상태에 따라서 UI 변경 가능
-      body: FutureBuilder(
-        future: webtoons,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return Column(
-              children: [
-                const SizedBox(
-                  height: 50,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: const [
+              SizedBox(
+                width: 20,
+              ),
+              Text(
+                "Today`s Webtoon",
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w800,
+                  color: Colors.green,
                 ),
-                Expanded(
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          FutureBuilder(
+            future: webtoons,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return SizedBox(
+                  height: 300,
                   child: makeList(snapshot),
+                );
+              }
+              return const Center(
+                child: CircularProgressIndicator(
+                  color: Colors.greenAccent,
+                  strokeWidth: 10,
                 ),
-              ],
-            );
-          }
-          return const Center(
-            child: CircularProgressIndicator(
-              color: Colors.greenAccent,
-              strokeWidth: 10,
-            ),
-          );
-        },
+              );
+            },
+          ),
+        ],
       ),
     );
   }
@@ -58,6 +65,7 @@ class HomeScreen extends StatelessWidget {
   // ListView의 item들 사이에 들어가는 위젯이 필수로 들어가야되는 named construtor
   ListView makeList(AsyncSnapshot<List<WebtoonModel>> snapshot) {
     return ListView.separated(
+      shrinkWrap: true,
       scrollDirection: Axis.horizontal,
       padding: const EdgeInsets.symmetric(
         horizontal: 20,

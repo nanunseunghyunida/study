@@ -23,6 +23,7 @@ class WebtoonWidget extends StatelessWidget {
         );
       },
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           // Hero: Unique한 TAG 값으로 연결된 두 위젯을 애니메이션 효과를 이용해 전환해주는 위젯
           Hero(
@@ -34,7 +35,7 @@ class WebtoonWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
                 boxShadow: [
                   BoxShadow(
-                    blurRadius: 15,
+                    blurRadius: 10,
                     offset: const Offset(10, 10),
                     color: Colors.black.withOpacity(0.5),
                   )
@@ -50,13 +51,18 @@ class WebtoonWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 10,
+            height: 15,
           ),
-          Text(
-            webtoon.title,
-            style: const TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.w600,
+          SizedBox(
+            width: 200,
+            child: Text(
+              webtoon.title,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                overflow: TextOverflow.ellipsis,
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
         ],
