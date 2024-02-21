@@ -25,12 +25,12 @@ class App extends StatelessWidget {
                 const SizedBox(
                   height: 60,
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: const [
+                      children: [
                         Text(
                           'Hey, Jeong',
                           style: TextStyle(
@@ -68,17 +68,14 @@ class App extends StatelessWidget {
                 ),
                 Text(
                   '\$5,194,482',
-                  style: TextStyle(
-                      fontSize: 44,
-                      color: Colors.white.withOpacity(0.8),
-                      fontWeight: FontWeight.w800),
+                  style: TextStyle(fontSize: 44, color: Colors.white.withOpacity(0.8), fontWeight: FontWeight.w800),
                 ),
                 const SizedBox(
                   height: 25,
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children: [
                     Button(
                       text: "Transfer",
                       backgroundColor: Color(0xfff2b33a),
@@ -100,10 +97,7 @@ class App extends StatelessWidget {
                   children: [
                     const Text(
                       'Wallets',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 36,
-                          fontWeight: FontWeight.w700),
+                      style: TextStyle(color: Colors.white, fontSize: 36, fontWeight: FontWeight.w700),
                     ),
                     Text(
                       'View All',

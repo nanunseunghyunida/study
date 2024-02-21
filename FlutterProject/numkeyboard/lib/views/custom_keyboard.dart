@@ -33,8 +33,8 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
       return showDialog(
         context: context,
         builder: (BuildContext context) => AlertDialog(
-          content: Row(
-            children: const [
+          content: const Row(
+            children: [
               Text('더 이상의 금액은 송금하실 수 없습니다.'),
               SizedBox(height: 40),
             ],
@@ -147,8 +147,7 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
           Expanded(
             child: ElevatedButton(
               style: ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(
-                    amount.isEmpty ? Colors.grey.shade300 : Colors.orange),
+                backgroundColor: MaterialStatePropertyAll(amount.isEmpty ? Colors.grey.shade300 : Colors.orange),
               ),
               onPressed: () {},
               child: Padding(
@@ -174,13 +173,7 @@ class _CustomKeyboardState extends State<CustomKeyboard> {
     return Scaffold(
       body: SafeArea(
         child: Column(
-          children: [
-            renderAmount(),
-            ...renderKeyboard(),
-            const SizedBox(height: 5),
-            renderConfirmButton(),
-            const SizedBox(height: 10)
-          ],
+          children: [renderAmount(), ...renderKeyboard(), const SizedBox(height: 5), renderConfirmButton(), const SizedBox(height: 10)],
         ),
       ),
     );
