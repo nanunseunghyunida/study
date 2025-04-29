@@ -141,6 +141,13 @@ class ImageSearchController extends GetxController {
     imageList.refresh();
   }
 
+  doRefresh() {
+    keyword.value = '';
+    textController.text = '';
+    imageList.clear();
+    nextPage.value = 1;
+  }
+
   @override
   void onClose() {
     textController.dispose();
