@@ -48,7 +48,7 @@ class ImageFavoriteController extends GetxController {
       Get.rawSnackbar(
         duration: const Duration(milliseconds: 2000),
         animationDuration: const Duration(milliseconds: 500),
-        backgroundColor: Colors.black.withValues(alpha: 0.8),
+        backgroundColor: Colors.black.withValues(alpha: 150),
         borderRadius: 10,
         margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
         messageText: const Center(

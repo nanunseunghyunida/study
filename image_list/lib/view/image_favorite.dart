@@ -121,9 +121,9 @@ class ImageItem extends StatelessWidget {
                 onTap: () => controller.favoriteUpdate(data),
                 child: Icon(
                   data.isFavorite! ? Icons.favorite : Icons.favorite_border,
-                  color: data.isFavorite! ? Colors.red : Colors.white.withValues(alpha: 0.6),
+                  color: data.isFavorite! ? Colors.red : Colors.white.withValues(alpha: 100),
                   shadows: [
-                    Shadow(color: Colors.black.withValues(alpha: 0.4), offset: const Offset(2, 2)),
+                    Shadow(color: Colors.black.withValues(alpha: 200), offset: const Offset(2, 2)),
                   ],
                 ),
               ),

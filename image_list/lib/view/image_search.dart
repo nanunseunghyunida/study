@@ -127,9 +127,9 @@ class ImageSearch extends GetView<ImageSearchController> {
                                             onTap: () => controller.favoriteUpdate(data),
                                             child: Icon(
                                               data.isFavorite! ? Icons.favorite : Icons.favorite_border,
-                                              color: data.isFavorite! ? Colors.red : Colors.white.withValues(alpha: 0.6),
+                                              color: data.isFavorite! ? Colors.red : Colors.white.withValues(alpha: 100),
                                               shadows: [
-                                                Shadow(color: Colors.black.withValues(alpha: 0.4), offset: const Offset(2, 2)),
+                                                Shadow(color: Colors.black.withValues(alpha: 200), offset: const Offset(2, 2)),
                                               ],
                                             ),
                                           ),
@@ -140,7 +140,7 @@ class ImageSearch extends GetView<ImageSearchController> {
                                           : Positioned(
                                               bottom: 0,
                                               child: Container(
-                                                color: Colors.black.withValues(alpha: 0.7),
+                                                color: Colors.black.withValues(alpha: 150),
                                                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                                                 child: Text(
                                                   data.displaySitename!,
